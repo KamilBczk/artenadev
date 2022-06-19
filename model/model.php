@@ -25,8 +25,10 @@ $url = explode('/', $_GET['url']);
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"> <!-- AOS -->
     <!-- JS DEFER -->
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script defer src="/assets/js/header.js"></script>
     <script defer src="/assets/js/loader.js"></script>
 
