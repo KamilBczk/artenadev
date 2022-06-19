@@ -6,7 +6,7 @@
 /* ============================== */
 ::-webkit-scrollbar {
   width: 5px;
-  background-color: #070A11;
+  background-color: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -487,11 +487,38 @@ h6, .h6 {
 
 .second-home-wrapper {
   background-color: #156165;
-  padding: 100px 0;
+  padding: 150px 0;
   color: #FFFFFF;
 }
 .second-home-wrapper .text-medium {
   text-transform: uppercase;
+}
+.second-home-wrapper .picture-preview-sec {
+  width: 25%;
+  height: 450px;
+  position: relative;
+  background-image: url(https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+  background-position: center left;
+  float: right;
+  right: 10%;
+}
+.second-home-wrapper .picture-preview-sec .picture-after:nth-child(1) {
+  position: absolute;
+  width: 15%;
+  background-color: #EF6C21;
+  height: 450px;
+  right: -20%;
+}
+.second-home-wrapper .picture-preview-sec .picture-after:nth-child(2) {
+  position: absolute;
+  content: " ";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 75px solid rgba(0, 0, 0, 0);
+  border-right: 75px solid #156165;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -32,7 +32,7 @@ $transition-slow: 0.50s;
 
 ::-webkit-scrollbar {
     width: 5px;
-    background-color: $color-black-artena;
+    background-color: $color-black;
 }
 ::-webkit-scrollbar-thumb {
     background: $color-orange; 
@@ -541,14 +541,43 @@ h6, .h6 {
 
 .second-home-wrapper {
     background-color: $color-green;
-    padding: 100px 0;
+    padding: 150px 0;
     color: $color-white;
 
     .text-medium {
         text-transform: uppercase;
     }
-}
 
+    .picture-preview-sec {
+        width: 25%;
+        height: 450px;
+        position: relative;
+        background-image: url(https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+        background-size: cover;
+        background-position: center left;
+        float: right;
+        right: 10%;
+
+        .picture-after:nth-child(1) {
+            position: absolute;
+            width: 15%;
+            background-color: $color-orange;
+            height: 450px;
+            right: -20%;
+        }
+
+        .picture-after:nth-child(2) {
+            position: absolute;
+            content: ' ';
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 75px solid rgba($color: #000000, $alpha: 0);
+            border-right: 75px solid rgba($color-green, $alpha: 1);
+        }
+    }
+}
 
 
 
