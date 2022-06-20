@@ -32,7 +32,7 @@ $transition-slow: 0.50s;
 
 ::-webkit-scrollbar {
     width: 5px;
-    background-color: $color-black;
+    background-color: $color-grey;
 }
 ::-webkit-scrollbar-thumb {
     background: $color-orange; 
@@ -228,16 +228,23 @@ h6, .h6 {
     color: $color-white;
     background-color: $color-black-artena;
     display: flex;
-    position: relative;
+    position: fixed;
     height: 100px;
     border-bottom: 1px solid $color-grey;
+    z-index: 50;
+    width: 100%;
+    transition: $transition-medium;
 
     .header-logo {
         display: flex;
         position: relative;
         align-items: center;
         justify-content: center;
-        width: 10%;
+        width: 15%;
+
+        svg {
+            max-height: 30px;
+        }
     }
 
     .header-nav-top {
@@ -312,13 +319,13 @@ h6, .h6 {
         position: relative;
         align-items: center;
         justify-content: center;
-        width: 10%;
+        width: 15%;
     
         .header-theme-wrap {
             display: inline-flex;
         }
     
-        h6 {
+        p {
             display: flex;
             position: relative;
             align-items: center;
@@ -340,6 +347,19 @@ h6, .h6 {
     }
 }
 
+.header-sep {
+    position: relative;
+    height: 100px;
+    background-color: $color-black-artena;
+}
+
+.header-minified {
+    height: 70px;
+}
+
+.header-hide {
+    transform: translateY(-70px);
+}
 
 
 /* ============================== */
@@ -556,7 +576,21 @@ h6, .h6 {
         background-size: cover;
         background-position: center left;
         float: right;
-        right: 10%;
+        right: 5%;
+        
+        &:hover .picture-preview-filtre {
+            background-color: rgba($color: $color-orange, $alpha: 0);
+        }
+
+        .picture-preview-filtre {
+            position: relative;
+            height: 450px;
+            transition: $transition-medium;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: $color-orange, $alpha: 0.15);
+        }
 
         .picture-after:nth-child(1) {
             position: absolute;
@@ -575,6 +609,78 @@ h6, .h6 {
             height: 0;
             border-bottom: 75px solid rgba($color: #000000, $alpha: 0);
             border-right: 75px solid rgba($color-green, $alpha: 1);
+        }
+    }
+
+    .arrow-down {
+        position: relative;
+        height: 300px;
+        width: 300px;
+        background-image: url(/assets/images/arrow-down.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+    }
+
+    .table-services {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 5%;
+        margin-top: 20px;
+
+        .table-elem {
+            .sep {
+                position: relative;
+                width: 100%;
+                height: 2px;
+                background-color: $color-white;
+                margin: 5px 0 20px;
+            }
+
+            .button {
+                margin: 30px 0;
+
+                .button-text {
+                    display: inline-block;
+                }
+
+                a {
+                    position: relative;
+                    text-transform: uppercase;
+                }
+
+                .button-round {
+                    position: relative;
+                    background-color: $color-orange;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    top: -7px;
+                    left: 10px;
+                    color: $color-white;
+                    border: 2px solid $color-orange;
+                    transition: $transition-medium;
+
+                    &:hover {
+                        background-color: rgba($color: $color-green, $alpha: 0);
+                    }
+                    &:hover svg path {
+                        fill: $color-orange;
+                    }
+                }
+
+                svg {
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    
+                    path {
+                        transition: $transition-medium;
+                    }
+                }
+            }
         }
     }
 }
