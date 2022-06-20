@@ -18,10 +18,11 @@ $url = explode('/', $_GET['url']);
 <html lang="en">
 <head>
     <!-- META -->
+    <title>Document</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="128x128" href="/favicon.png">
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -29,6 +30,7 @@ $url = explode('/', $_GET['url']);
     <!-- JS DEFER -->
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/1dda56443c.js" crossorigin="anonymous"></script>
     <script defer src="/assets/js/header.js"></script>
     <script defer src="/assets/js/loader.js"></script>
 
