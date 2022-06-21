@@ -4,14 +4,6 @@ $(document).ready(function () {
     $(window).scroll(function () {
         var scroll = $(this).scrollTop();
         var oldscroll = $(".scroll-info").val();
-        // console.log(scroll + " " + oldscroll);
-
-        if (scroll > oldscroll) {
-            console.log("bottom");
-        }
-        else {
-            console.log("top");
-        }
 
         if (scroll >= 100) {
             if (scroll > oldscroll) {
@@ -35,6 +27,4 @@ $(document).ready(function () {
     $(".header-theme svg").click(function () {
         $(this).toggleClass("light");
     });
-
-    AOS.init();
 });
