@@ -2,11 +2,11 @@ var controller = new ScrollMagic.Controller();
 
 // var animateElem = document.getElementById("picture");
 new ScrollMagic.Scene({
-    triggerElement: "#animation-text",
+    triggerElement: "#startTextAnimation",
     duration: 1800,
     triggerHook: 0
 })
-.setTween("#test", {transform: "scale(1)"})
-.setPin("#fifth-home-wrapper")
+.setTween("#setStyle", {transform: "translate3d(60%, 0, 0)"})
+.setPin("#setPin")
 .addIndicators()
 .addTo(controller);
