@@ -18,7 +18,7 @@ $url = explode('/', $_GET['url']);
 <html lang="en">
 <head>
     <!-- META -->
-    <title>Document</title>
+    <title>Artena Dev_ - Home</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,9 +30,16 @@ $url = explode('/', $_GET['url']);
     <!-- JS DEFER -->
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script defer src="/assets/js/parallax.js"></script>
     <script src="https://kit.fontawesome.com/1dda56443c.js" crossorigin="anonymous"></script>
+    <script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script defer src="/assets/js/header.js"></script>
     <script defer src="/assets/js/loader.js"></script>
+    <script defer src="/assets/js/setup.js"></script>
+    <script defer src="/assets/js/scroll.js"></script>
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +48,7 @@ $url = explode('/', $_GET['url']);
 
 </head>
 <body class="loader">
-    <?php //include_once "model/assets/loader.html"; ?>
+    <?php include_once "model/assets/loader.html"; ?>
     <?php include_once "model/assets/header.html"; ?>
     <?php include_once "vue/$url[0].html"; ?>
     <?php include_once "model/assets/footer.html"; ?>
