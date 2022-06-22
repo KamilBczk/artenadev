@@ -158,6 +158,11 @@ h6, .h6 {
 
 .text-intro-right {
     float: right;
+    &::after {
+        content: ' ';
+        display: block;
+        clear: both;
+    }
 }
 
 .button {
@@ -203,6 +208,103 @@ h6, .h6 {
         &:hover svg path {
             fill: $color-orange;
         }
+    }
+}
+
+.two-circle {
+    height: 250px;
+    position: relative;
+    width: 50%;
+    float: left;
+    color: $color-white;
+
+    &::after {
+        content: ' ';
+        display: block;
+        clear: both;
+    }
+
+    .f-circle, .s-circle {
+        height: 250px;
+        width: 250px;
+        position: absolute;
+        content: ' ';
+        border-radius: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .f-circle {
+        background-color: $color-green;
+        left: calc(50% - 125px / 2);
+    }
+
+    .s-circle {
+        left: calc(50% + 125px / 2);
+        border: 2px solid $color-white;
+
+        .o-bar {
+            height: 30px;
+            width: 80px;
+            position: relative;
+            background-color: $color-orange;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: $transition-medium;
+        }
+
+        .text-animation {
+            width: 246px;
+            height: 246px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: unlispin 10s infinite;
+            transition: transform 10s ease-in-out;
+
+            @keyframes unlispin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .text-animation-elem {
+                text-transform: uppercase;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .text-animation-elem p {
+                position: relative;
+            }
+
+            .text-animation-elem:nth-child(1) p  { transform: rotate(0deg) translateY(-100px); }
+            .text-animation-elem:nth-child(2) p  { transform: rotate(45deg) translateY(-100px); }
+            .text-animation-elem:nth-child(3) p  { transform: rotate(90deg) translateY(-100px); }
+            .text-animation-elem:nth-child(4) p  { transform: rotate(135deg) translateY(-100px); }
+            .text-animation-elem:nth-child(5) p  { transform: rotate(180deg) translateY(-100px); }
+            .text-animation-elem:nth-child(6) p  { transform: rotate(225deg) translateY(-100px); }
+            .text-animation-elem:nth-child(7) p  { transform: rotate(270deg) translateY(-100px); }
+            .text-animation-elem:nth-child(8) p  { transform: rotate(315deg) translateY(-100px); }
+
+        }
+    }
+}
+
+.two-circle-right {
+    float: right;
+
+    .f-circle {
+        left: calc(50% + 125px / 2);
+    }
+    .s-circle {
+        left: calc(50% - 125px / 2);
     }
 }
 
@@ -310,6 +412,8 @@ h6, .h6 {
     top: -100%;
     // border-radius: 50%;
 }
+
+
 
 /* ============================== */
 /* header ======================= */
@@ -453,6 +557,8 @@ h6, .h6 {
 }
 
 
+
+
 /* ============================== */
 /* home ========================= */
 /* ============================== */
@@ -467,84 +573,7 @@ h6, .h6 {
     color: $color-white;
     height: 250px;
 
-    .two-circle {
-        height: 250px;
-        position: relative;
-        width: 50%;
-        float: left;
-
-        .f-circle, .s-circle {
-            height: 250px;
-            width: 250px;
-            position: absolute;
-            content: ' ';
-            border-radius: 50%;
-            top: 0;
-            transform: translateX(-50%);
-        }
-
-        .f-circle {
-            background-color: $color-green;
-            left: calc(50% - 125px / 2);
-        }
-
-        .s-circle {
-            left: calc(50% + 125px / 2);
-            border: 2px solid $color-white;
-
-            .o-bar {
-                height: 30px;
-                width: 80px;
-                position: relative;
-                background-color: $color-orange;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                transition: $transition-medium;
-            }
-
-            .text-animation {
-                width: 246px;
-                height: 246px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                animation: unlispin 10s infinite;
-                transition: transform 10s ease-in-out;
-
-                @keyframes unlispin {
-                    from {
-                        transform: rotate(0deg);
-                    }
-                    to {
-                        transform: rotate(360deg);
-                    }
-                }
-
-                .text-animation-elem {
-                    text-transform: uppercase;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                }
-
-                .text-animation-elem p {
-                    position: relative;
-                }
-
-                .text-animation-elem:nth-child(1) p  { transform: rotate(0deg) translateY(-100px); }
-                .text-animation-elem:nth-child(2) p  { transform: rotate(45deg) translateY(-100px); }
-                .text-animation-elem:nth-child(3) p  { transform: rotate(90deg) translateY(-100px); }
-                .text-animation-elem:nth-child(4) p  { transform: rotate(135deg) translateY(-100px); }
-                .text-animation-elem:nth-child(5) p  { transform: rotate(180deg) translateY(-100px); }
-                .text-animation-elem:nth-child(6) p  { transform: rotate(225deg) translateY(-100px); }
-                .text-animation-elem:nth-child(7) p  { transform: rotate(270deg) translateY(-100px); }
-                .text-animation-elem:nth-child(8) p  { transform: rotate(315deg) translateY(-100px); }
-
-            }
-        }
-    }
+    
 
 }
 
@@ -954,6 +983,7 @@ h6, .h6 {
                 height: 70px;
                 position: relative;
                 left: 15%;
+                fill: $color-green;
             }
 
             & .slider-elem :nth-last-child(1)::after {
@@ -968,6 +998,109 @@ h6, .h6 {
     }
 }
 
-// .categories .categories-border:nth-child(4) h1 {
-//     color: $color-black;
-// }
+.sixth-homme-wrapper {
+    height: 70vh;
+    background-color: $color-green;
+    overflow: hidden;
+    position: relative;
+
+    .phone-container {
+        position: relative;
+        width: 50%;
+        height: 70vh;
+        float: left;
+        // background-color: $color-white;
+        
+        & .phone-border-elem {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            border: 1px dashed $color-white;
+            border-radius: 50%;
+        }
+
+        & .phone-border-elem:nth-child(1) {
+            height: 450px;
+            width: 450px;
+        }
+        & .phone-border-elem:nth-child(2) {
+            height: 600px;
+            width: 600px;
+        }
+        & .phone-border-elem:nth-child(3) {
+            height: 750px;
+            width: 750px;
+        }
+        
+        .phone-bg {
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            background-color: $color-orange;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+
+            .phone-bg-img {
+                position: absolute;
+                top: 50%;
+                left: 30%;
+                transform: translate(-50%, -50%);
+            
+                img {
+                    width: 400px;
+                    height: 400px;
+                }
+            }
+            .animated {
+                top: 1500%;
+            }
+        }
+    }
+
+    .container {
+        height: 70vh;
+    }
+    .big-text {
+        position: relative;
+        right: 0;
+        text-align: center;
+        color: $color-white;
+        text-transform: uppercase;
+        display: flex;
+        top: 50%;
+        transform: translateY(-50%);
+
+        h1 {
+            line-height: 150%;
+            font-size: 3rem;
+        }
+    }
+}
+
+.seventh-home-wrapper {
+    padding: 150px 0;
+    color: $color-white;
+    background-color: $color-black-artena;
+
+    .f-circle {
+        // background-color: $color-orange;
+    }
+
+    .o-bar {
+        // background-color: $color-black-artena !important;
+        cursor: pointer;
+        z-index: 2;
+
+        svg {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
