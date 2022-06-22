@@ -624,6 +624,7 @@ h6, .h6 {
 }
 .third-home-wrapper .categories {
   position: relative;
+  transform: rotate(15deg);
   /* TODO */
   padding: 50px 100px;
 }
@@ -631,7 +632,6 @@ h6, .h6 {
   width: 100%;
   position: relative;
   padding: 35px 0 25px;
-  overflow: hidden;
 }
 .third-home-wrapper .categories .categories-border::after {
   position: absolute;
@@ -741,7 +741,7 @@ h6, .h6 {
 }
 .fourth-home-wrapper .picture {
   position: absolute;
-  top: 15%;
+  top: 5%;
   left: 65%;
   transform: translate(-50%, -50%);
 }
@@ -766,12 +766,23 @@ h6, .h6 {
 .fifth-home-wrapper .big-text {
   font-size: 2rem;
   text-transform: uppercase;
-  position: relative;
-  top: 50px;
+  position: absolute;
   text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .fifth-home-wrapper .big-text h1 {
   letter-spacing: 1px;
+}
+.fifth-home-wrapper .big-text .letterspacing {
+  letter-spacing: 10px;
+  opacity: 0;
+}
+.fifth-home-wrapper .big-text-top {
+  top: 20%;
+}
+.fifth-home-wrapper .big-text-bot {
+  bottom: 20%;
 }
 .fifth-home-wrapper .overflow {
   overflow: hidden;
@@ -786,9 +797,8 @@ h6, .h6 {
   width: 300%;
   height: 200px;
   position: absolute;
-  background-color: #6E706F;
   left: 0;
-  transform: translate3d(0%, 0, 0);
+  transform: translateX(0%);
 }
 .fifth-home-wrapper .slider-on-croll .slider-elem {
   position: relative;
@@ -814,6 +824,12 @@ h6, .h6 {
   height: 70px;
   position: relative;
   left: 15%;
+}
+.fifth-home-wrapper .slider-on-croll .slider-elem .slider-elem :nth-last-child(1)::after {
+  display: none;
+}
+.fifth-home-wrapper .animated {
+  transform: translateX(-66%);
 }
 
 /*# sourceMappingURL=style.css.map */
