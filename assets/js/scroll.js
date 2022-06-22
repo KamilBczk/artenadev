@@ -1,12 +1,16 @@
+var tween = new TimelineMax()
+.add(TweenMax.to("#addTranslate", 1, {className: "+=animated"}),"first")
+.add(TweenMax.to("#addLetterSpacing", 1, {opacity: "0"}),"first")
+
 var controller = new ScrollMagic.Controller();
 
 // var animateElem = document.getElementById("picture");
 new ScrollMagic.Scene({
     triggerElement: "#startTextAnimation",
-    duration: 1800,
+    duration: 1000,
     triggerHook: 0
 })
-.setTween("#setStyle", {transform: "translate3d(60%, 0, 0)"})
+.setTween(tween)
 .setPin("#setPin")
-.addIndicators()
+// .addIndicators()
 .addTo(controller);
