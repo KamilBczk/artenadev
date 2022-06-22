@@ -48,7 +48,7 @@ $url = explode('/', $_GET['url']);
 
 </head>
 <body class="loader">
-    <?php //include_once "model/assets/loader.html"; ?>
+    <?php include_once "model/assets/loader.html"; ?>
     <?php include_once "model/assets/header.html"; ?>
     <?php include_once "vue/$url[0].html"; ?>
     <?php include_once "model/assets/footer.html"; ?>
