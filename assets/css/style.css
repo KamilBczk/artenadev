@@ -677,9 +677,19 @@ h6, .h6 {
 }
 .third-home-wrapper .categories .categories-elem .elem-text h1 {
   font-size: 2.5rem;
+  cursor: pointer;
+  transition: 0.33s;
+}
+.third-home-wrapper .categories .categories-elem .elem-text h1.active {
+  color: #EF6C21 !important;
+}
+.third-home-wrapper .categories .categories-elem .elem-text h1.active p {
+  color: #FFFFFF !important;
 }
 .third-home-wrapper .categories-desc {
   position: relative;
+  left: 15%;
+  max-width: 35%;
 }
 .third-home-wrapper .categories-desc .categories-bg {
   position: absolute;
@@ -696,11 +706,23 @@ h6, .h6 {
   padding-bottom: 25px;
   text-transform: uppercase;
 }
-.third-home-wrapper .categories-desc .categories-desc-par {
-  max-width: 35%;
-}
 .third-home-wrapper .categories-desc .categories-desc-par p {
   line-height: 160%;
+}
+.third-home-wrapper .categories-desc .categories-desc-nav {
+  position: relative;
+  padding-top: 20px;
+}
+.third-home-wrapper .categories-desc .categories-desc-nav span {
+  padding: 0 10px;
+  transition: 0.33s;
+  cursor: pointer;
+}
+.third-home-wrapper .categories-desc .categories-desc-nav span:nth-child(1) {
+  margin-right: 10px;
+}
+.third-home-wrapper .categories-desc .categories-desc-nav span:hover svg path {
+  fill: #FFFFFF;
 }
 .third-home-wrapper .categories-table {
   display: grid;

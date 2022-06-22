@@ -756,12 +756,23 @@ h6, .h6 {
 
             .elem-text h1 {
                 font-size: 2.5rem;
+                cursor: pointer;
+                transition: $transition-medium;
+            }
+
+            .elem-text h1.active {
+                color: $color-orange !important;
+                & p {
+                    color: $color-white !important;
+                }
             }
         }
     }
 
     .categories-desc {
         position: relative;
+        left: 15%;
+        max-width: 35%;
 
         .categories-bg {
             position: absolute;
@@ -781,13 +792,27 @@ h6, .h6 {
             text-transform: uppercase;
         }
 
-        .categories-desc-par {
-            max-width: 35%;
-        }
-
         .categories-desc-par p {
             line-height: 160%;
+        }
 
+        .categories-desc-nav {
+            position: relative;
+            padding-top: 20px;
+            
+            span {
+                padding: 0 10px;
+                transition: $transition-medium;
+                cursor: pointer;
+            }
+
+            span:nth-child(1) {
+                margin-right: 10px;
+            }
+
+            span:hover svg path {
+                fill: $color-white;
+            }
         }
     }
 
@@ -942,3 +967,7 @@ h6, .h6 {
         transform: translateX(-66%);
     }
 }
+
+// .categories .categories-border:nth-child(4) h1 {
+//     color: $color-black;
+// }
