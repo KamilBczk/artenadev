@@ -10,7 +10,7 @@ new ScrollMagic.Scene({
 })
 .setTween(firstTween)
 .setPin("#setPin")
-.addIndicators()
+// .addIndicators()
 .addTo(controller);
 
 var secondTween = new TimelineMax()
@@ -22,6 +22,6 @@ new ScrollMagic.Scene({
     duration: 500,
 })
 .setTween(secondTween)
-.addIndicators()
+// .addIndicators()
 .addTo(controller);
 
