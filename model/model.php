@@ -43,6 +43,7 @@ $url = explode('/', $_GET['url']);
     <script defer src="/assets/js/loader.js"></script>
     <script defer src="/assets/js/setup.js"></script>
     <script defer src="/assets/js/scroll.js"></script>
+    <script defer src="/assets/js/home.js"></script>
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
