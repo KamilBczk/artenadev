@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let loader = true;
+    let loader = false;
 
     if (loader == true) {
         window.scrollTo(0, 0);
