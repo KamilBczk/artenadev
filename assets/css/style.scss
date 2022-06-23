@@ -529,15 +529,15 @@ h6, .h6 {
         ul li a::before {
             content: ' ';
             position: absolute;
-            height: 2px;
+            height: 1px;
             width: 0px;
             background-color: $color-white;
             transition: $transition-medium;
             left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            bottom: -5px;
+            transform: translateX(-50%);
         }
-    
+
         ul li a:hover::before {
             width: 100%;
         }
@@ -602,12 +602,13 @@ h6, .h6 {
     background-color: $color-black-artena;
     border-top: 1px solid $color-grey;
     color: $color-white;
-    margin-bottom: 150px;
-    padding: 70px 0;
+    padding: 100px 0;
+
 
     .footer-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        padding-bottom: 70px;
     
         .title {
             text-transform: uppercase;
@@ -616,6 +617,27 @@ h6, .h6 {
 
         .grid-elem {
             padding: 10px 0;
+
+            a {
+                position: relative;
+                color: $color-white;
+                transition: $transition-medium;
+                
+                &::after {
+                    position: absolute;
+                    content: ' ';
+                    width: 0%;
+                    transition: $transition-medium;
+                    height: 1px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: $color-white;
+                    bottom: -5px;
+                }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
         }
 
         .socials {
@@ -623,11 +645,28 @@ h6, .h6 {
             height: 30px;
             padding-top: 5px;
             
+            a::after {
+                display: none;
+            }
+            
             img {
                 height: 25px;
                 width: 25px;
                 margin-right: 10px;
             }
+        }
+    }
+
+    .footer-bot {
+        padding: 70px 0 0;
+        border-top: 1px solid $color-grey;
+
+        .footer-bot-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            
+            .grid-elem:nth-child(2) {text-align: center;}
+            .grid-elem:nth-child(3) {text-align: right;}
         }
     }
 }
@@ -887,11 +926,42 @@ h6, .h6 {
             float: left;
             color: $color-orange;
             padding-right: 25px;
+            width: 50px;
         }
 
         .categories-desc-title {
-            padding-bottom: 25px;
+            margin-bottom: 25px;
             text-transform: uppercase;
+            position: relative;
+            margin-left: 75px;
+
+            h3 {
+                display: inline-block;
+                position: relative;
+            }
+
+            & h3::after {
+                position: absolute;
+                content: ' ';
+                height: 10px;
+                background-color: $color-orange;
+                bottom: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                right: 100%;
+                transition: $transition-medium;
+            }
+            &.animation h3::after {
+                right: 0;
+            }
+            &.animation-finish h3::after {
+                left: 100%;
+            }
+        }
+
+        .categories-desc-par {
+            margin-left: 75px;
         }
 
         .categories-desc-par p {
@@ -901,15 +971,20 @@ h6, .h6 {
         .categories-desc-nav {
             position: relative;
             padding-top: 20px;
+            margin-left: 75px;
+
             
             span {
                 padding: 0 10px;
-                transition: $transition-medium;
                 cursor: pointer;
             }
 
             span:nth-child(1) {
                 margin-right: 10px;
+            }
+
+            span svg path {
+                transition: $transition-medium;
             }
 
             span:hover svg path {
@@ -1145,6 +1220,10 @@ h6, .h6 {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+
+        h1 {
+            text-transform: uppercase;
+        }
     }
 }
 
@@ -1157,8 +1236,19 @@ h6, .h6 {
     .o-bar {
         cursor: pointer;
         z-index: 2;
+        transition: $transition-medium;
+        
+        &:hover {
+            height: 70px;
+            width: 135px;
+        }
+
+        &:hover svg {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
 
         svg {
+            transition: $transition-slow;
             position: relative;
             top: 50%;
             left: 50%;

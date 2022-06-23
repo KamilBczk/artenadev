@@ -480,13 +480,13 @@ h6, .h6 {
 .header .header-nav-top ul li a::before {
   content: " ";
   position: absolute;
-  height: 2px;
+  height: 1px;
   width: 0px;
   background-color: #FFFFFF;
   transition: 0.33s;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  bottom: -5px;
+  transform: translateX(-50%);
 }
 .header .header-nav-top ul li a:hover::before {
   width: 100%;
@@ -542,12 +542,12 @@ h6, .h6 {
   background-color: #070A11;
   border-top: 1px solid #6E706F;
   color: #FFFFFF;
-  margin-bottom: 150px;
-  padding: 70px 0;
+  padding: 100px 0;
 }
 .footer .footer-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 70px;
 }
 .footer .footer-grid .title {
   text-transform: uppercase;
@@ -556,15 +556,51 @@ h6, .h6 {
 .footer .footer-grid .grid-elem {
   padding: 10px 0;
 }
+.footer .footer-grid .grid-elem a {
+  position: relative;
+  color: #FFFFFF;
+  transition: 0.33s;
+}
+.footer .footer-grid .grid-elem a::after {
+  position: absolute;
+  content: " ";
+  width: 0%;
+  transition: 0.33s;
+  height: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFFFFF;
+  bottom: -5px;
+}
+.footer .footer-grid .grid-elem a:hover::after {
+  width: 100%;
+}
 .footer .footer-grid .socials {
   padding: 0;
   height: 30px;
   padding-top: 5px;
 }
+.footer .footer-grid .socials a::after {
+  display: none;
+}
 .footer .footer-grid .socials img {
   height: 25px;
   width: 25px;
   margin-right: 10px;
+}
+.footer .footer-bot {
+  padding: 70px 0 0;
+  border-top: 1px solid #6E706F;
+}
+.footer .footer-bot .footer-bot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.footer .footer-bot .footer-bot-grid .grid-elem:nth-child(2) {
+  text-align: center;
+}
+.footer .footer-bot .footer-bot-grid .grid-elem:nth-child(3) {
+  text-align: right;
 }
 
 /* ============================== */
@@ -795,10 +831,38 @@ h6, .h6 {
   float: left;
   color: #EF6C21;
   padding-right: 25px;
+  width: 50px;
 }
 .third-home-wrapper .categories-desc .categories-desc-title {
-  padding-bottom: 25px;
+  margin-bottom: 25px;
   text-transform: uppercase;
+  position: relative;
+  margin-left: 75px;
+}
+.third-home-wrapper .categories-desc .categories-desc-title h3 {
+  display: inline-block;
+  position: relative;
+}
+.third-home-wrapper .categories-desc .categories-desc-title h3::after {
+  position: absolute;
+  content: " ";
+  height: 10px;
+  background-color: #EF6C21;
+  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 100%;
+  transition: 0.33s;
+}
+.third-home-wrapper .categories-desc .categories-desc-title.animation h3::after {
+  right: 0;
+}
+.third-home-wrapper .categories-desc .categories-desc-title.animation-finish h3::after {
+  left: 100%;
+}
+.third-home-wrapper .categories-desc .categories-desc-par {
+  margin-left: 75px;
 }
 .third-home-wrapper .categories-desc .categories-desc-par p {
   line-height: 160%;
@@ -806,14 +870,17 @@ h6, .h6 {
 .third-home-wrapper .categories-desc .categories-desc-nav {
   position: relative;
   padding-top: 20px;
+  margin-left: 75px;
 }
 .third-home-wrapper .categories-desc .categories-desc-nav span {
   padding: 0 10px;
-  transition: 0.33s;
   cursor: pointer;
 }
 .third-home-wrapper .categories-desc .categories-desc-nav span:nth-child(1) {
   margin-right: 10px;
+}
+.third-home-wrapper .categories-desc .categories-desc-nav span svg path {
+  transition: 0.33s;
 }
 .third-home-wrapper .categories-desc .categories-desc-nav span:hover svg path {
   fill: #FFFFFF;
@@ -1016,6 +1083,9 @@ h6, .h6 {
   top: 50%;
   transform: translateY(-50%);
 }
+.sixth-homme-wrapper .text-intro h1 {
+  text-transform: uppercase;
+}
 
 .seventh-home-wrapper {
   padding: 150px 0;
@@ -1025,8 +1095,17 @@ h6, .h6 {
 .seventh-home-wrapper .o-bar {
   cursor: pointer;
   z-index: 2;
+  transition: 0.33s;
+}
+.seventh-home-wrapper .o-bar:hover {
+  height: 70px;
+  width: 135px;
+}
+.seventh-home-wrapper .o-bar:hover svg {
+  transform: translate(-50%, -50%) rotate(360deg);
 }
 .seventh-home-wrapper .o-bar svg {
+  transition: 0.5s;
   position: relative;
   top: 50%;
   left: 50%;
