@@ -178,7 +178,7 @@ h6, .h6 {
         text-transform: uppercase;
     }
 
-    svg {
+    img {
         position: relative;
         top: 50%;
         left: 50%;
@@ -1243,11 +1243,11 @@ h6, .h6 {
             width: 135px;
         }
 
-        &:hover svg {
+        &:hover img {
             transform: translate(-50%, -50%) rotate(360deg);
         }
 
-        svg {
+        img {
             transition: $transition-slow;
             position: relative;
             top: 50%;
