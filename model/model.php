@@ -39,11 +39,11 @@ $url = explode('/', $_GET['url']);
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script defer src="/assets/js/countup.js"></script>
     <script defer src="/assets/js/header.js"></script>
     <script defer src="/assets/js/loader.js"></script>
     <script defer src="/assets/js/setup.js"></script>
-    <script defer src="/assets/js/scroll.js"></script>
-    <script defer src="/assets/js/home.js"></script>
+    <script defer src="/assets/js/<?=$url[0]?>.js"></script>
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@ $url = explode('/', $_GET['url']);
 </head>
 <body class="loader-active">
     <?php include_once "model/assets/loader.html"; ?>
-    <?php include_once "model/assets/header.html"; ?>
+    <?php include_once "model/assets/header.php"; ?>
     <?php include_once "vue/$url[0].html"; ?>
     <?php include_once "model/assets/footer.html"; ?>
 
