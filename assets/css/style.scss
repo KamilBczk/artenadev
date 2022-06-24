@@ -354,7 +354,7 @@ h6, .h6 {
     $loader-svg-w: 352px;
 
     transition: $transition-slow;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100vh;
     background-color: $color-black-artena;
@@ -893,6 +893,10 @@ h6, .h6 {
                 top: -30px;
                 left: 15px;
                 transform: rotate(-15deg);
+                
+                p {
+                    transition: $transition-medium;
+                }
             }
 
             .elem-text h1 {
@@ -902,6 +906,13 @@ h6, .h6 {
             }
 
             .elem-text h1.active {
+                color: $color-orange !important;
+                & p {
+                    color: $color-white !important;
+                }
+            }
+
+            .elem-text h1:hover {
                 color: $color-orange !important;
                 & p {
                     color: $color-white !important;
@@ -938,34 +949,34 @@ h6, .h6 {
             h3 {
                 display: inline-block;
                 position: relative;
+                background: linear-gradient(0deg, $color-white, $color-white) no-repeat right bottom / 0 100%;
+                transition: background-size 350ms;
+                display: inline-block;
+                text-transform: uppercase;
             }
 
-            & h3::after {
-                position: absolute;
-                content: ' ';
-                height: 10px;
-                background-color: $color-orange;
-                bottom: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 0;
-                right: 100%;
-                transition: $transition-medium;
-            }
-            &.animation h3::after {
+            &.animation h3 {
                 right: 0;
-            }
-            &.animation-finish h3::after {
-                left: 100%;
+                background-size: 100% 100%;
+                background-position-x: left;
             }
         }
 
         .categories-desc-par {
             margin-left: 75px;
-        }
 
-        .categories-desc-par p {
-            line-height: 160%;
+            p {
+                line-height: 160%;
+                background: linear-gradient(0deg, $color-white, $color-white) no-repeat right bottom / 0 100%;
+                transition: background-size 350ms;
+                display: inline-block;
+            }
+            
+            &.animation p {
+                right: 0;
+                background-size: 100% 100%;
+                background-position-x: left;
+            }
         }
 
         .categories-desc-nav {
@@ -1270,5 +1281,163 @@ h6, .h6 {
     .image-arrow {
         padding-top: 50px;
         padding-left: 50px;
+    }
+}
+
+.portfolio {
+    background: $color-black;
+    // background: linear-gradient(180deg, $color-black-artena 0%, $color-green 25%, $color-black-artena 50%, $color-green 75%, $color-black-artena 100%);
+    background-color: $color-black-artena;
+
+    & .list-projects .project-elem:nth-child(1) {
+        padding-top: 200px;
+    }
+
+    & .list-projects .project-elem:nth-last-child(1) {
+        padding-bottom: 200px;
+    }
+
+    .project-elem {
+        padding: 50px 0;
+        position: relative;
+
+        &:nth-child(1) .portfolio-picture-to-anim {background-image: url(/assets/images/sites/artgrandest.png);}
+        &:nth-child(2) .portfolio-picture-to-anim {background-image: url(/assets/images/sites/trevidic.png);}
+        &:nth-child(3) .portfolio-picture-to-anim {background-image: url(/assets/images/sites/bildconstruct.png);}
+        &:nth-child(4) .portfolio-picture-to-anim {background-image: url(/assets/images/sites/leseclaireurs.png);}
+        &:nth-child(5) .portfolio-picture-to-anim {background-image: url(/assets/images/sites/kamilbiczyk.png);}
+    }
+
+    .list-projects#second .project-elem {
+        &:nth-child(1) .portfolio-picture-to-anim {background-image: url(/assets/images/sites/artena.png);}
+        &:nth-child(2) .portfolio-picture-to-anim {background-image: url(/assets/images/sites/artena.png);}
+        &:nth-child(3) .portfolio-picture-to-anim {background-image: url(/assets/images/sites/artena.png);}
+    }
+
+    .project-elem-wrapper {
+        color: $color-white;
+        text-align: center;
+        position: relative;
+        
+        .on-hover {
+            height: 250px;
+            position: relative;
+
+            &:hover .project-desc {
+                 opacity: 1;
+            }
+        }
+
+        .project-text {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .project-title {
+            position: relative;
+
+            h1 {
+                background: linear-gradient(0deg, $color-orange, $color-orange) no-repeat right bottom / 0 50%;
+                transition: background-size 350ms;
+                display: inline-block;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-size: 3rem;
+            }
+            h1:where(:hover, :focus-visible) {
+                background-size: 100% 50%;
+                background-position-x: left;
+            }
+        }
+
+        .project-desc {
+            position: relative;
+            opacity: 0;
+            transition: $transition-medium;
+
+            p {
+                background: linear-gradient(0deg, $color-orange, $color-orange) no-repeat right bottom / 0 50%;
+                transition: background-size 350ms;
+                display: inline-block;
+                text-transform: uppercase;
+            }
+            p:where(:hover, :focus-visible) {
+                background-size: 100% 50%;
+                background-position-x: left;
+            }
+        }
+
+        .portfolio-picture-to-anim {
+            position: absolute;
+            width: 500px;
+            background-color: $color-white;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            transition: 1s;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+            background-position: center center;
+
+            &.anim {
+                height: 500px;
+            }
+
+            .picture-filtre {
+                background-color: rgba($color: $color-black, $alpha: 0.7);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    .title {
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-white;
+        padding: 150px 0 0px;
+
+        h1 {
+            position: relative;
+            display: inline-block;
+
+            &::after, &::before {
+                position: absolute;
+                content: ' ';
+                width: 30%;
+                height: 2px;
+                border-radius: 1px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: $color-white;
+                transition: 5s;
+            }
+
+            &::after {
+                opacity: 0;
+                left: calc(-20px + -60%);
+            }
+
+            &::before {
+                opacity: 0;
+                right: calc(-20px + -60%);
+            }
+        }
+
+        &.anim {
+            h1 {
+                &::after {
+                    opacity: 1;
+                    left: calc(-20px + -30%);
+                }
+                &::before {
+                    opacity: 1;
+                    right: calc(-20px + -30%);
+                }
+            }
+        }
     }
 }

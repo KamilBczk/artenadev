@@ -332,7 +332,7 @@ h6, .h6 {
 /* ============================== */
 .loader {
   transition: 0.5s;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   background-color: #070A11;
@@ -805,6 +805,9 @@ h6, .h6 {
   left: 15px;
   transform: rotate(-15deg);
 }
+.third-home-wrapper .categories .categories-elem .elem-number p {
+  transition: 0.33s;
+}
 .third-home-wrapper .categories .categories-elem .elem-text h1 {
   font-size: 2.5rem;
   cursor: pointer;
@@ -814,6 +817,12 @@ h6, .h6 {
   color: #EF6C21 !important;
 }
 .third-home-wrapper .categories .categories-elem .elem-text h1.active p {
+  color: #FFFFFF !important;
+}
+.third-home-wrapper .categories .categories-elem .elem-text h1:hover {
+  color: #EF6C21 !important;
+}
+.third-home-wrapper .categories .categories-elem .elem-text h1:hover p {
   color: #FFFFFF !important;
 }
 .third-home-wrapper .categories-desc {
@@ -842,30 +851,29 @@ h6, .h6 {
 .third-home-wrapper .categories-desc .categories-desc-title h3 {
   display: inline-block;
   position: relative;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF) no-repeat right bottom/0 100%;
+  transition: background-size 350ms;
+  display: inline-block;
+  text-transform: uppercase;
 }
-.third-home-wrapper .categories-desc .categories-desc-title h3::after {
-  position: absolute;
-  content: " ";
-  height: 10px;
-  background-color: #EF6C21;
-  bottom: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 100%;
-  transition: 0.33s;
-}
-.third-home-wrapper .categories-desc .categories-desc-title.animation h3::after {
+.third-home-wrapper .categories-desc .categories-desc-title.animation h3 {
   right: 0;
-}
-.third-home-wrapper .categories-desc .categories-desc-title.animation-finish h3::after {
-  left: 100%;
+  background-size: 100% 100%;
+  background-position-x: left;
 }
 .third-home-wrapper .categories-desc .categories-desc-par {
   margin-left: 75px;
 }
 .third-home-wrapper .categories-desc .categories-desc-par p {
   line-height: 160%;
+  background: linear-gradient(0deg, #FFFFFF, #FFFFFF) no-repeat right bottom/0 100%;
+  transition: background-size 350ms;
+  display: inline-block;
+}
+.third-home-wrapper .categories-desc .categories-desc-par.animation p {
+  right: 0;
+  background-size: 100% 100%;
+  background-position-x: left;
 }
 .third-home-wrapper .categories-desc .categories-desc-nav {
   position: relative;
@@ -1124,6 +1132,152 @@ h6, .h6 {
 .seventh-home-wrapper .image-arrow {
   padding-top: 50px;
   padding-left: 50px;
+}
+
+.portfolio {
+  background: #000000;
+  background-color: #070A11;
+}
+.portfolio .list-projects .project-elem:nth-child(1) {
+  padding-top: 200px;
+}
+.portfolio .list-projects .project-elem:nth-last-child(1) {
+  padding-bottom: 200px;
+}
+.portfolio .project-elem {
+  padding: 50px 0;
+  position: relative;
+}
+.portfolio .project-elem:nth-child(1) .portfolio-picture-to-anim {
+  background-image: url(/assets/images/sites/artgrandest.png);
+}
+.portfolio .project-elem:nth-child(2) .portfolio-picture-to-anim {
+  background-image: url(/assets/images/sites/trevidic.png);
+}
+.portfolio .project-elem:nth-child(3) .portfolio-picture-to-anim {
+  background-image: url(/assets/images/sites/bildconstruct.png);
+}
+.portfolio .project-elem:nth-child(4) .portfolio-picture-to-anim {
+  background-image: url(/assets/images/sites/leseclaireurs.png);
+}
+.portfolio .project-elem:nth-child(5) .portfolio-picture-to-anim {
+  background-image: url(/assets/images/sites/kamilbiczyk.png);
+}
+.portfolio .list-projects#second .project-elem:nth-child(1) .portfolio-picture-to-anim {
+  background-image: url(/assets/images/sites/artena.png);
+}
+.portfolio .list-projects#second .project-elem:nth-child(2) .portfolio-picture-to-anim {
+  background-image: url(/assets/images/sites/artena.png);
+}
+.portfolio .list-projects#second .project-elem:nth-child(3) .portfolio-picture-to-anim {
+  background-image: url(/assets/images/sites/artena.png);
+}
+.portfolio .project-elem-wrapper {
+  color: #FFFFFF;
+  text-align: center;
+  position: relative;
+}
+.portfolio .project-elem-wrapper .on-hover {
+  height: 250px;
+  position: relative;
+}
+.portfolio .project-elem-wrapper .on-hover:hover .project-desc {
+  opacity: 1;
+}
+.portfolio .project-elem-wrapper .project-text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.portfolio .project-elem-wrapper .project-title {
+  position: relative;
+}
+.portfolio .project-elem-wrapper .project-title h1 {
+  background: linear-gradient(0deg, #EF6C21, #EF6C21) no-repeat right bottom/0 50%;
+  transition: background-size 350ms;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 3rem;
+}
+.portfolio .project-elem-wrapper .project-title h1:where(:hover, :focus-visible) {
+  background-size: 100% 50%;
+  background-position-x: left;
+}
+.portfolio .project-elem-wrapper .project-desc {
+  position: relative;
+  opacity: 0;
+  transition: 0.33s;
+}
+.portfolio .project-elem-wrapper .project-desc p {
+  background: linear-gradient(0deg, #EF6C21, #EF6C21) no-repeat right bottom/0 50%;
+  transition: background-size 350ms;
+  display: inline-block;
+  text-transform: uppercase;
+}
+.portfolio .project-elem-wrapper .project-desc p:where(:hover, :focus-visible) {
+  background-size: 100% 50%;
+  background-position-x: left;
+}
+.portfolio .project-elem-wrapper .portfolio-picture-to-anim {
+  position: absolute;
+  width: 500px;
+  background-color: #FFFFFF;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transition: 1s;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center center;
+}
+.portfolio .project-elem-wrapper .portfolio-picture-to-anim.anim {
+  height: 500px;
+}
+.portfolio .project-elem-wrapper .portfolio-picture-to-anim .picture-filtre {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.portfolio .title {
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 150px 0 0px;
+}
+.portfolio .title h1 {
+  position: relative;
+  display: inline-block;
+}
+.portfolio .title h1::after, .portfolio .title h1::before {
+  position: absolute;
+  content: " ";
+  width: 30%;
+  height: 2px;
+  border-radius: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #FFFFFF;
+  transition: 5s;
+}
+.portfolio .title h1::after {
+  opacity: 0;
+  left: calc(-20px - 60%);
+}
+.portfolio .title h1::before {
+  opacity: 0;
+  right: calc(-20px - 60%);
+}
+.portfolio .title.anim h1::after {
+  opacity: 1;
+  left: calc(-20px - 30%);
+}
+.portfolio .title.anim h1::before {
+  opacity: 1;
+  right: calc(-20px - 30%);
 }
 
 /*# sourceMappingURL=style.css.map */
