@@ -1,3 +1,7 @@
+// Parallax
+var scene = document.getElementById('scene');
+var parallaxInstance = new Parallax(scene);
+
 const jsonData = fetch("/assets/json/categories.json")
 .then(response => {
     return response.json();
@@ -40,14 +44,16 @@ $(document).ready(function () {
 
     function changeText(number) {
         let title = $(".categories-desc-title");
+        let par = $(".categories-desc-par")
         title.addClass("animation");
+        par.addClass("animation");
         setTimeout(() => {
             $(".categories-desc-number p").text("0" + (number+1) + ".");
             $(".categories-desc-title h3").text(datas[number][0]);
             $(".categories-desc-par p").text(datas[number][1]);
-            title.addClass("animation-finish");
             setTimeout(() => {
-                title.removeClass("animation animation-finish");
+                title.removeClass("animation");
+                par.removeClass("animation");
             }, 330);
         }, 330);
         console.log(number);
@@ -82,5 +88,33 @@ $(document).ready(function () {
                 }, 600)
             }, 400);
         }, 400);
-    }, 700);
+    }, 1500);
+
+    var controller = new ScrollMagic.Controller();
+
+    var firstTween = new TimelineMax()
+    .add(TweenMax.to("#addTranslate", 1, {className: "+=animated"}),"first")
+    .add(TweenMax.to("#addLetterSpacing", 1, {opacity: "0"}),"first")
+    new ScrollMagic.Scene({
+        triggerElement: "#startTextAnimation",
+        duration: 1000,
+        triggerHook: 0
+    })
+    .setTween(firstTween)
+    .setPin("#setPin")
+    // .addIndicators()
+    .addTo(controller);
+
+    var secondTween = new TimelineMax()
+    .add(TweenMax.to("#animTranslate", 1, {left: "70%"}), "first")
+    // .add(TweenMax.to("#animTranslate", 1, {transform: "rotate(15deg)"}), "first");
+
+    new ScrollMagic.Scene({
+        triggerElement: "#startPhoneAnimation",
+        duration: 500,
+    })
+    .setTween(secondTween)
+    // .addIndicators()
+    .addTo(controller);
+
 })
