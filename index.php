@@ -9,7 +9,9 @@ if ($url === "") {
     header('Location: /home');
 } elseif ($url[0] === "home") {
     include_once "model/model.php";
-} else {
+} elseif ($url[0] === "portfolio") {
+    include_once "model/model.php";
+}  else {
     echo "404";
 }
 
