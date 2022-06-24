@@ -11,7 +11,9 @@ if ($url === "") {
     include_once "model/model.php";
 } elseif ($url[0] === "portfolio") {
     include_once "model/model.php";
-}  else {
+} elseif ($url[0] === "about") {
+    include_once "model/model.php";
+} else {
     echo "404";
 }
 
