@@ -736,7 +736,7 @@ h6, .h6 {
   grid-template-columns: repeat(4, 1fr);
   padding-bottom: 70px;
 }
-.footer .footer-grid .title {
+.footer .footer-grid .footer-title {
   text-transform: uppercase;
   color: #EF6C21;
 }
