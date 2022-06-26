@@ -27,6 +27,12 @@ $transition-medium: 0.33s;
 $transition-slow: 0.50s;
 
 /* ============================== */
+/* import ======================= */
+/* ============================== */
+
+@use "./includes/lighttheme.scss";
+
+/* ============================== */
 /* global ======================= */
 /* ============================== */
 
@@ -155,6 +161,18 @@ h6, .h6 {
             line-height: 150%;
         }
     }
+}
+
+#sep_anim {
+    left: -10%;
+    background-color: $color-black-artena;
+    transition: 1000ms;
+}
+
+#sep_anim.animated {
+    background-color: $color-white;
+    left: 0;
+    opacity: 1;
 }
 
 .text-intro-right {
@@ -313,18 +331,6 @@ h6, .h6 {
     opacity: 0;
 }
 
-#sep_anim {
-    left: -10%;
-    background-color: $color-black-artena;
-    transition: 1000ms;
-}
-
-#sep_anim.animated {
-    background-color: $color-white;
-    left: 0;
-    opacity: 1;
-}
-
 .two-circle-basic-animation {
     transform: scale(0.2);
     opacity: 0;
@@ -345,6 +351,63 @@ h6, .h6 {
     opacity: 1;
 }
 
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
+    padding: 150px 0 0px;
+
+    h1 {
+        position: relative;
+        display: inline-block;
+
+        &::after, &::before {
+            position: absolute;
+            content: ' ';
+            width: 30%;
+            height: 2px;
+            border-radius: 1px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $color-white;
+            transition: 5s;
+        }
+
+        &::after {
+            opacity: 0;
+            left: calc(-20px + -60%);
+        }
+
+        &::before {
+            opacity: 0;
+            right: calc(-20px + -60%);
+        }
+    }
+
+    &.anim {
+        h1 {
+            &::after {
+                opacity: 1;
+                left: calc(-20px + -30%);
+            }
+            &::before {
+                opacity: 1;
+                right: calc(-20px + -30%);
+            }
+        }
+    }
+}
+
+.title.h-100 {
+    padding: 0;
+    height: 100vh;
+
+    h1 {
+        position: relative;
+        top: 40%;
+        transform: translateY(-50%);
+    }
+}
 
 /* ============================== */
 /* loader ======================= */
@@ -498,6 +561,7 @@ h6, .h6 {
             margin: 0 30px;
             
             &::after {
+                transition: $transition-medium;
                 content: ' ';
                 position: absolute;
                 width: 1px;
@@ -603,6 +667,7 @@ h6, .h6 {
     border-top: 1px solid $color-grey;
     color: $color-white;
     padding: 100px 0;
+    transition: $transition-medium;
 
 
     .footer-grid {
@@ -679,14 +744,12 @@ h6, .h6 {
     background-color: $color-black-artena;
     position: relative;
     padding: 100px 0;
+    transition: $transition-medium;
 }
 
 .first-home-wrapper .first-view {
     color: $color-white;
     height: 250px;
-
-    
-
 }
 
 .picture-preview {
@@ -720,6 +783,7 @@ h6, .h6 {
         height: 75px;
         position: absolute;
         z-index: 1;
+        transition: $transition-medium;
 
         &:nth-child(1) {
             bottom: 0;
@@ -839,6 +903,7 @@ h6, .h6 {
     background-color: $color-black-artena;
     color: $color-white;
     padding: 150px 0;
+    transition: $transition-medium;
 
     .text-intro h1 {
         text-transform: uppercase;
@@ -928,6 +993,7 @@ h6, .h6 {
 
         .categories-bg {
             position: absolute;
+            transition: $transition-medium;
             top: -90px;
             left: -80px;
         }
@@ -1068,6 +1134,7 @@ h6, .h6 {
     height: 100vh;
     color: $color-white;
     position: relative;
+    transition: $transition-medium;
 
     .container {
         position: relative;
@@ -1121,7 +1188,6 @@ h6, .h6 {
             position: relative;
             width: calc(100% / 15);
             height: 70px;
-            background-color: $color-black-artena;
             float: left;
             top: 50%;
             transform: translateY(-50%);
@@ -1242,7 +1308,7 @@ h6, .h6 {
     padding: 150px 0;
     color: $color-white;
     background-color: $color-black-artena;
-
+    transition: $transition-medium;
 
     .o-bar {
         cursor: pointer;
@@ -1393,51 +1459,167 @@ h6, .h6 {
             }
         }
     }
+}
 
-    .title {
-        text-align: center;
+.about {
+    background-color: $color-black-artena;
+    transition: $transition-medium;
+    color: $color-white;
+
+    .about-info-topin {
+        position: absolute;
         text-transform: uppercase;
-        color: $color-white;
-        padding: 150px 0 0px;
+        left: 10%;
+        top: 0;
+        transform: rotate(calc(-25deg));
+        height: 125px;
+    }
 
-        h1 {
+    .about-desc {
+        position: relative;
+
+        .desc-image {
             position: relative;
-            display: inline-block;
+            padding-top: 25px;
 
-            &::after, &::before {
+            img {
+                position: relative;
+                left: 50%;
+                transform: translate(-50%);
+                width: 20%;
+            }
+        }
+
+        .desc-text {
+            position: relative;
+            max-width: 50%;
+            margin: 0 auto;
+
+            p {
+                line-height: 140%;
+                padding: 25px 0;
+                
+                &:nth-child(1) {
+                    margin-top: 50px;
+                }
+                &:nth-last-child(1) {
+                    padding-bottom: 150px;
+                }
+            }
+        }
+    }
+
+    .about-date {
+        position: relative;
+        margin-top: 250px;
+
+        .big-svg-draw {
+            position: relative;
+            width: 976px;
+            margin: 0 auto;
+
+            .rec {
                 position: absolute;
-                content: ' ';
-                width: 30%;
-                height: 2px;
-                border-radius: 1px;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: $color-white;
-                transition: 5s;
+                width: 50px;
+                height: 50px;
+                background-color: $color-orange;
+                border-radius: 50%;
             }
 
-            &::after {
-                opacity: 0;
-                left: calc(-20px + -60%);
-            }
-
-            &::before {
-                opacity: 0;
-                right: calc(-20px + -60%);
+            svg, path {
+                position: relative;
+                left: 0;
+                top: 0;
             }
         }
 
-        &.anim {
-            h1 {
+        .svg-after-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            & .svg-after {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background-color: $color-orange;
+                border-radius: 50%;
+                top: 10px;
+                left: 10px;
+                opacity: 0;
+
+                &.svg-after-right {
+                    p.h5 {
+                        left: unset;
+                        right: 60px;
+                    }
+
+                    p.regular {
+                        left: unset;
+                        right: 130px;
+                    }
+
+                    &::after {
+                        right: 10px;
+                        left: unset;
+                    }
+                }
+
+                p.h5 {
+                    position: relative;
+                    left: 60px;
+                }
+
+                p.regular {
+                    width: 350px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 130px;
+                    line-height: 150%;
+                }
+
                 &::after {
-                    opacity: 1;
-                    left: calc(-20px + -30%);
-                }
-                &::before {
-                    opacity: 1;
-                    right: calc(-20px + -30%);
+                    content: ' ';
+                    position: absolute;
+                    background-color: $color-orange;
+                    width: 110px;
+                    height: 3px;
+                    top: 50%;
+                    left: 5px;
+                    transform: translateY(-50%);
                 }
             }
+
+            & .svg-after:nth-child(1) {
+                left: 496px;
+                top: 3px;
+            }
+
+            & .svg-after:nth-child(2) {
+                top: 500px;
+                left: 948px;
+            }
+            & .svg-after:nth-child(3) {
+                top: 870px;
+                left: -19px;
+            }
+            & .svg-after:nth-child(4) {
+                top: 1589px;
+                left: 884px;
+            }
+            & .svg-after:nth-child(5) {
+                top: 1993px;
+                left: 339px;
+            }
         }
+    }
+
+    .about-val {
+        margin: 150px 0 0;
+        position: relative;
+
     }
 }

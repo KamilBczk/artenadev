@@ -1,0 +1,197 @@
+
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-orange: #EF6C21;
+$color-black-artena: #070A11;
+$color-grey: #6E706F;
+$color-green: #156165;
+
+$transition-speed: 0.20s;
+$transition-medium: 0.33s;
+$transition-slow: 0.50s;
+
+
+.light-theme {
+    /* ============================== */
+    /* global ======================= */
+    /* ============================== */
+
+    body {
+        background-color: $color-white;
+    }
+
+    #sep_anim {
+        background-color: $color-white;
+    }
+
+    #sep_anim.animated {
+        background-color: $color-black-artena;
+    }
+
+    .two-circle .s-circle {
+        border: 2px solid $color-black-artena;
+        color: $color-black-artena;
+    }
+
+    /* ============================== */
+    /* loader ======================= */
+    /* ============================== */
+
+    .loader {
+        background-color: $color-white;
+    }
+
+    /* ============================== */
+    /* header ======================= */
+    /* ============================== */
+    
+    .header-sep {
+        background-color: $color-white;
+    }
+
+    .header {
+        color: $color-black-artena;    
+        background-color: $color-white;
+        border-bottom: 1px solid $color-black-artena;
+
+        svg {
+            circle {
+                fill: $color-black-artena;
+            }
+
+            rect {
+                stroke: $color-black-artena
+            }
+        }
+
+        .header-nav-top {
+            ul li::after {
+                background-color: $color-black-artena;
+            }
+
+            ul li a::before {
+                background-color: $color-black-artena;
+            }
+        }
+    }
+
+    /* ============================== */
+    /* footer ======================= */
+    /* ============================== */
+
+    .footer {
+        background-color: $color-white;
+        border-top: 1px solid $color-black-artena;
+        color: $color-black-artena;
+
+        a {
+            color: $color-black-artena !important;
+        }
+
+        .grid-elem a::after {
+            background-color: $color-black-artena !important;
+        }
+
+        .socials img {
+            filter: invert(1);
+        }
+
+        .footer-bot {
+            border-top: 1px solid $color-black-artena;
+        }
+    }
+
+    /* ============================== */
+    /* home ========================= */
+    /* ============================== */
+
+    .first-home-wrapper {
+        background-color: $color-white;
+
+        .first-view {
+            color: $color-black-artena;
+        }
+    }
+
+    .picture-preview .picture-after {
+        &:nth-child(1) {
+            background-color: $color-white;
+        }
+
+        &:nth-child(3) {
+            border-left: 75px solid rgba($color-white, $alpha: 1);
+        }
+
+    }
+
+    .third-home-wrapper {
+        background-color: $color-white;
+        color: $color-black-artena;
+        
+        .text-intro .text-desc .sep {
+            background-color: $color-black-artena;
+        }
+
+        .categories {
+            .categories-border::after {
+                background-color: $color-black-artena;
+            }
+            
+            .categories-elem {
+                .elem-text h1:hover {
+                    color: $color-orange !important;
+                    & p {
+                        color: $color-black-artena !important;
+                    }
+                }
+                .elem-text h1.active p {
+                    color: $color-black-artena !important;
+                }
+            }
+        }
+
+        .categories-desc {
+            .categories-bg img {
+                filter: invert(1);
+            }
+            .categories-desc-title h3 {
+                background: linear-gradient(0deg, $color-black-artena, $color-black-artena) no-repeat right bottom / 0 100%;
+            }
+            .categories-desc-par p {
+                background: linear-gradient(0deg, $color-black-artena, $color-black-artena) no-repeat right bottom / 0 100%;
+            }
+            .categories-desc-nav {
+                span:hover svg path {
+                    fill: $color-black-artena;
+                }
+            }
+        }
+        .categories-table {
+            .elem-number {
+                border: 2px solid $color-black-artena;
+            }
+
+            .sep {
+                background-color: $color-black-artena;
+            }
+        }
+    }
+
+    .fifth-home-wrapper {
+        background-color: $color-white;
+        color: $color-black-artena;
+    }
+
+    .sixth-homme-wrapper .sep {
+        background-color: $color-white !important;
+    }
+
+    .seventh-home-wrapper {
+        background-color: $color-white;
+        color: $color-black-artena;
+
+        .image-arrow img {
+            filter: invert(1)
+        }
+    }
+}
