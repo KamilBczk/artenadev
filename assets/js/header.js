@@ -26,5 +26,6 @@ $(document).ready(function () {
     // Theme
     $(".header-theme svg").click(function () {
         $(this).toggleClass("light");
+        $("body").toggleClass("light-theme");
     });
 });
