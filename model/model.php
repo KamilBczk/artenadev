@@ -35,10 +35,12 @@ $url = explode('/', $_GET['url']);
     <script src="https://kit.fontawesome.com/1dda56443c.js" crossorigin="anonymous"></script>
     <script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script defer src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.3.4/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.3.4/dist/ScrollTrigger.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
     <script defer src="/assets/js/countup.js"></script>
     <script defer src="/assets/js/header.js"></script>
     <script defer src="/assets/js/loader.js"></script>
