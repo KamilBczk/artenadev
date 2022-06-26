@@ -9,7 +9,7 @@
         <nav class="nav-top">
             <ul>
                 <li class="base text-light <?php if ($url[0] === "home") {echo "elem-active";} ?>"><a href="/home">home</a></li>
-                <li class="base text-light <?php if ($url[0] === "X") {echo "elem-active";} ?>"><a href="/about">about</a></li>
+                <li class="base text-light <?php if ($url[0] === "about") {echo "elem-active";} ?>"><a href="/about">about</a></li>
                 <li class="base text-light <?php if ($url[0] === "X") {echo "elem-active";} ?>"><a href="/404">services</a></li>
                 <li class="base text-light <?php if ($url[0] === "portfolio") {echo "elem-active";} ?>"><a href="/portfolio">portfolio</a></li>
                 <li class="base text-light <?php if ($url[0] === "X") {echo "elem-active";} ?>"><a href="/404">contact</a></li>
